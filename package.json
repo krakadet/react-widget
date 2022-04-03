@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.config.js",
-    "dev": "webpack serve",
+    "start": "webpack-dev-server --config webpack.config.js --env env=development",
+    "dev": "webpack serve --env env=production",
     "build": "webpack"
   },
   "author": "",

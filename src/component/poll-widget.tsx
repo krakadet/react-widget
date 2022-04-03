@@ -8,31 +8,31 @@ interface PollWidget {
 }
 
 const PollWidget = ({mainQuestion, answers}: PollWidget): JSX.Element => {
-    const [pollWidgetState, setPollWidgetState] = useState(Array(answers.length).fill(0));
-    const totalVotes = pollWidgetState.reduce((acc: number, curr: number) => acc + curr);
+    const [votes, setVotes] = useState(Array(answers.length).fill(0));
+    const totalVotes = votes.reduce((acc: number, curr: number) => acc + curr);
 
     useEffect(() => {
-        const currentVotes = getLocalStorage(mainQuestion);
-        const totalVotes = currentVotes.reduce((acc: number, curr: number) => acc + curr);
-        if (totalVotes !== 0) {
-            setPollWidgetState(currentVotes)
+        const localStorageVotes = getLocalStorage(mainQuestion);
+
+        if (localStorageVotes && localStorageVotes.reduce((acc: number, curr: number) => acc + curr) !== 0) {
+            setVotes(localStorageVotes)
         } else {
-            setLocalStorage(mainQuestion, pollWidgetState)
+            setLocalStorage(mainQuestion, votes)
         }
     }, [mainQuestion])
 
 
     useEffect(() => {
-        setLocalStorage(mainQuestion, pollWidgetState)
+        setLocalStorage(mainQuestion, votes)
     }, [totalVotes])
 
     const getPercentage = (answerIndex: number): number => {
-        return pollWidgetState?.[answerIndex] ? Math.round((pollWidgetState[answerIndex] / totalVotes) * 100) : 0;
+        return votes?.[answerIndex] ? Math.round((votes[answerIndex] / totalVotes) * 100) : 0;
     };
 
 
     const handleOnClick = (index: number) => () =>
-        setPollWidgetState(prev => {
+        setVotes(prev => {
             const el = prev[index] += 1;
             return [...prev.slice(0, index), el, ...prev.slice(index + 1)];
         });
@@ -41,7 +41,7 @@ const PollWidget = ({mainQuestion, answers}: PollWidget): JSX.Element => {
         <div className="container">
             <h1>{mainQuestion}</h1>
 
-            {pollWidgetState.map((answer: string, index: number): JSX.Element =>
+            {votes.map((answer: string, index: number): JSX.Element =>
                 (
                     <div className="progressbar-container" key={index} onClick={handleOnClick(index)}>
                         <div className='progressbar-complete' key={index}

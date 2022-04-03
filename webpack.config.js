@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -40,7 +42,14 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, "src", "index.html"),
-        }),
+            name: "index.html",
+            inject: false,
+            template: path.resolve(__dirname,"src", "index.html"),
+        })
+
     ],
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
 };
