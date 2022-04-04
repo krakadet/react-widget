@@ -7,7 +7,7 @@ module.exports = {
     entry: "./src/index.tsx",
     output: {
         path: path.join(__dirname, "build"),
-        filename: "bundle.js",
+        filename: "bundle_up.js",
         library: 'MyApp',
         libraryTarget: 'umd',
         umdNamedDefine: true,
