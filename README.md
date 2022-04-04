@@ -1,5 +1,5 @@
-#####The current progect is a simple web application that allows users to create a simple. poll voutes
-#####You can add new polls to any HTML page in script tag
+##### The current progect is a simple web application that allows users to create a simple. poll voutes
+##### You can add new polls to any HTML page in script tag
 
 #### The technologies used in this project are: 
 
@@ -9,7 +9,7 @@
 ###### - Babel for transpiling
 ###### - Jest for testing
 
-##Installation
+## Installation
 For starting the project you can use the following command:
 
 ```npm run start```
@@ -23,7 +23,7 @@ For building the project you can use the following command:
 ```npm run build```
 
 
-####How to add a new poll in HTML page?
+#### How to add a new poll in HTML page?
 
 ```html  
 <div class="poll-widget"></div>
@@ -39,7 +39,7 @@ For building the project you can use the following command:
     ]);
 </script>
 ```
-####If you want to add more than one poll you can use the following code:
+#### If you want to add more than one poll you can use the following code:
 
 ```html    
 <div class="poll-widget"></div>
@@ -63,7 +63,7 @@ For building the project you can use the following command:
 ~~x~~
 Important: The best practice to add script tag to the end of the HTML page.
 
-###TODO:
+### TODO:
 
 1. Add some more unit tests
 2. Add some more tests for the build process
