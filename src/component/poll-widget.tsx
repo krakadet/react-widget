@@ -7,7 +7,7 @@ interface PollWidget {
     answers: string[];
 }
 
-const PollWidget = ({mainQuestion, answers}: PollWidget): JSX.Element => {
+function PollWidget  ({mainQuestion, answers}: PollWidget): JSX.Element  {
     const [votes, setVotes] = useState(Array(answers.length).fill(0));
     const totalVotes = votes.reduce((acc: number, curr: number) => acc + curr);
 
