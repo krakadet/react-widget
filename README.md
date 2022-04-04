@@ -1,4 +1,5 @@
-##### The current progect is a simple web application that allows users to create a simple. poll voutes
+## Description
+##### The current progect is a simple web application that allows users to create a simple poll voutes
 ##### You can add new polls to any HTML page in script tag
 
 #### The technologies used in this project are: 
