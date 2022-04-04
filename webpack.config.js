@@ -11,12 +11,13 @@ module.exports = {
         library: 'MyApp',
         libraryTarget: 'umd',
         umdNamedDefine: true,
+        globalObject: 'this'
     },
     mode: process.env.NODE_ENV || "development",
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
     },
-    devServer: { contentBase: path.join(__dirname, "src") },
+    devServer: { contentBase: path.join(__dirname, "build") },
     module: {
         rules: [
             {

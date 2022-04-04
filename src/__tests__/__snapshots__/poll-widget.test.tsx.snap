@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test poll widdet component should render initial state with zeros 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h1>
+      What is your favorite color?
+    </h1>
+    <div
+      class="progressbar-container"
+    >
+      <div
+        class="progressbar-complete"
+        style="width: 0%;"
+      >
+        <div
+          class="progressbar-liquid"
+        />
+      </div>
+      <span
+        class="progress"
+      >
+        Red
+         
+        0
+        %
+      </span>
+    </div>
+    <div
+      class="progressbar-container"
+    >
+      <div
+        class="progressbar-complete"
+        style="width: 0%;"
+      >
+        <div
+          class="progressbar-liquid"
+        />
+      </div>
+      <span
+        class="progress"
+      >
+        Blue
+         
+        0
+        %
+      </span>
+    </div>
+    <div
+      class="progressbar-container"
+    >
+      <div
+        class="progressbar-complete"
+        style="width: 0%;"
+      >
+        <div
+          class="progressbar-liquid"
+        />
+      </div>
+      <span
+        class="progress"
+      >
+        Green
+         
+        0
+        %
+      </span>
+    </div>
+  </div>
+</div>
+`;
