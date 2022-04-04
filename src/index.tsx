@@ -7,12 +7,10 @@ const config=[
     {
     mainQuestion: "What is your favorite color?",
     answers: ['Red', 'Green', 'Blue'],
-    elementId: 'app'
 },
 {
     mainQuestion: "What is your favorite car?",
     answers: ['audi', 'kia', 'bmw'],
-    elementId: 'app'
 }
 ]
 //
@@ -36,7 +34,9 @@ export const init = (config: any) => {
 
     widgetDivs.forEach((div, index) => {
         ReactDOM.render(
-                <PollWidget {...config[index]}   />,
+            <React.StrictMode>
+                <PollWidget {...config[index]}   />
+            </React.StrictMode>,
             div
         );
     });
