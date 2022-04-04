@@ -36,9 +36,7 @@ export const init = (config: any) => {
 
     widgetDivs.forEach((div, index) => {
         ReactDOM.render(
-            <React.StrictMode>
-                <PollWidget {...config[index]}   />
-            </React.StrictMode>,
+                <PollWidget {...config[index]}   />,
             div
         );
     });
